@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11131b">
+  <title>游戏入口</title>
+  <link rel="stylesheet" href="pages/site.css">
+  <script src="pages/site.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header><span class="eyebrow">GAME COLLECTION</span><h1>游戏入口</h1><p>输入访问密码，选择想要进入的世界。</p></header>
+    <section id="locked" class="panel" aria-labelledby="unlock-title">
+      <h2 id="unlock-title">解锁游戏</h2>
+      <p>请输入本地设置的访问密码。</p>
+      <form id="unlock-form">
+        <label for="password">访问密码</label>
+        <div class="password-row"><input id="password" type="password" autocomplete="current-password" required><button id="unlock" type="submit">进入</button></div>
+        <p id="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section id="games" class="panel" hidden aria-labelledby="games-title">
+      <div class="section-heading"><div><span class="eyebrow">SELECT A GAME</span><h2 id="games-title">选择游戏</h2></div><button id="lock" class="secondary" type="button">退出</button></div>
+      <div class="games-grid" id="game-list"></div>
+      <p id="game-message" role="status" aria-live="polite"></p>
+    </section>
+    <section id="player" hidden aria-label="FC 游戏">
+      <div class="player-bar"><button id="back" class="secondary" type="button">← 返回游戏列表</button></div>
+      <iframe id="game-frame" title="FC 游戏"></iframe>
+    </section>
+    <footer>经典游戏 · 在浏览器中重温</footer>
+  </main>
+</body>
+</html>
